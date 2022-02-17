@@ -1,6 +1,8 @@
 Q2
 The best case scenario is the case that the pivot is equal to the value of the kth element of the sorted ascending array (0 indexed). The time complexity of this is O(n), where n is the number of elements in the input vector, because even in the best case we would have to loop through the entire contents of the array to ensure we have all the values smaller than or equal to the pivot in the proper array. 
 
+//note: is it the height of the tree * n? nlogn or n*h. or is that average case
+
 {42, 13, 43, 14, 18, 66, 90, 68, 81, 96}
 // p = 42
 // k = 3
@@ -13,6 +15,9 @@ Q3
 The worst case time complexity occurs when the pivot is farthest position wise from the target value, or if the array is already sorted in descending or ascending order depending on the target element/k. 
 
 Since each iteration would be a new recursive call over a vector of size n-1, time complexity is O(n^2)
+
+Q4
+I'd say the average case is the middle road of extreme cases, where we have a possibility of reducing by only -1, and also a possiblity of immediately returning because the pivot is the kth (0 indexed) smallest element. This might look roughly like O(logn), choosing base two because it's the middle ground between the target being the first and last elements when the pivot is always the first element.
 
 Q5
 Where n is the size of the input, at the very least per recursive call, we would need O(n) space because we receive a copy of a vector that is potentially n-1 at the worst case, and then before the next recursive call, we create 3 vectors with the total allocated space of n. So worst case is about 2n + 1, which would simplify to O(n).
