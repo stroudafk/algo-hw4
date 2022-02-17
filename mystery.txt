@@ -1,0 +1,83 @@
+
+The worst case time complexity occurs 
+
+
+
+
+
+
+
+
+
+Q2
+Where n is the size of the input vector, and k is another input value, the best case of mystery is O(N), if there are at least k elements lesser than the pivot and k is no more than the number of elements lesser than or equal to the pivot. The for loop to put the elements in their respective arrays (left, middle, or right) runs N times no matter what.
+
+ex 
+k = 4
+{30, 0, 0, 0, 0}
+pivot = 30
+{0, 0, 0, 0} {30} {}
+
+//TODO: review below 
+
+//need at least k elements lesser than pivot to avoid first case, and assuming this, to hit on the next case (not a recursive call), we need at least 1 elements equal to the pivot, 
+
+//OR at least k+1 elements greater than or equal to pivot 
+
+
+Q3
+The worst case is if k is less than the number of elements lesser than the pivot, or if k is greater than or equal to the number of elements lesser than or equal to the pivot. Theoretically both of the above worse cases are no better than the other because k does not necessarily have any bearing on the number of elements lesser than the pivot or the number of elements greater than the pivot. The runtime of the above scenario is 
+
+// or, with calling on the left side, k can never decrease to equal left size, and left size is either staying the same or always increaseing. on the contrary, the last recursive call is always trying to decrease k and may eventually hit the best case. sorted in ascending or descending order, or every element is identical 
+
+
+// if the pivot is the median every time? idk 
+k = 6
+{0, 0, 0, 0 , 0}
+pivot = 0
+{} {0,0,0,0,0} {}
+
+
+space
+
+At the very least, we would need 
+
+
+Q6
+Mystery returns the k+1 smallest element.
+
+
+
+
+//test 1 "A00000000"
+// Your input array for Q1 is {38, 41, 47, 65, 4, 32, 49, 12, 59, 16}
+// Your first row should be {38, 41, 47, 65, 4, 32, 49, 12, 59, 16, 5}
+// pivot 38
+// k = 5
+// {4, 32, 12, 16}
+// {38}
+// {41, 47, 65, 49, 59}
+
+// pivot = 41
+// k = 0
+// {}{41}{47, 65, 49, 59}
+
+// return 41
+
+//callsToMystery returns {{38, 41, 47, 65, 4, 32, 49, 12, 59, 16, 5}, {41,47,65,49,59,0}};
+
+// test case 2
+// "A00000100"
+// Your input array for Q1 is {13, 42, 43, 14, 18, 66, 90, 68, 81, 96}
+
+// p = 13
+// k = 3
+// {} {13} {42 43 14 18 66 90 68 81 96}
+// mystery({42 43 14 18 66 90 68 81 96}, 2)
+
+// p = 42
+// k = 2
+
+// {42 43 14 18 66 90 68 81 96}
+// {14 18} {42} {43 66 90 81 96}
+// return 42

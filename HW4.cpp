@@ -5,7 +5,7 @@
 
 std::string getTxstId() {
   // TODO change this to your TXST ID (should begin with "A")
-  return "A04955601";
+  return "A00000100";
 
 }
 
@@ -23,16 +23,17 @@ std::vector<std::vector<int>> callsToMystery() {
 // Your first row should be 
 // {44, 76, 16, 67, 30, 47, 0, 87, 6, 38, 5}
 
-
-//Explanation  
+// Explanation  
 // recursive iteration 1
 // k = 5
 // pivot = 44
 // {16, 30, 0, 6, 38} {44} {76, 67, 47, 87}
 // take the else if route, as 5 + 1 = 6 and > 5
-// return 16
+// return 44
 
-//test "A00000000"
+
+
+//test 1 "A00000000"
 // Your input array for Q1 is {38, 41, 47, 65, 4, 32, 49, 12, 59, 16}
 // Your first row should be {38, 41, 47, 65, 4, 32, 49, 12, 59, 16, 5}
 // pivot 38
@@ -49,6 +50,21 @@ std::vector<std::vector<int>> callsToMystery() {
 
 //callsToMystery returns {{38, 41, 47, 65, 4, 32, 49, 12, 59, 16, 5}, {41,47,65,49,59,0}};
 
+// test case 2
+// "A00000100"
+// Your input array for Q1 is {13, 42, 43, 14, 18, 66, 90, 68, 81, 96}
+
+// p = 13
+// k = 3
+// {} {13} {42 43 14 18 66 90 68 81 96}
+// mystery({42 43 14 18 66 90 68 81 96}, 2)
+
+// p = 42
+// k = 2
+
+// {42 43 14 18 66 90 68 81 96}
+// {14 18} {42} {43 66 90 81 96}
+// return 42
 
 // ==== DO NOT CHANGE ANYTHING BELOW THIS LINE! ====
 

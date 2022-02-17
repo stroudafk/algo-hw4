@@ -1,0 +1,32 @@
+Q7.B
+
+1. nums = {1, 3, 5}, target = 1
+2. nums = {1, 3, 5}, target = 4
+3. nums = {1, 3, 5}, target = 0
+4. nums = {1, 3, 5}, target = 6
+
+1.
+l = 0, r = 3-1 = 2, m = 0 + (2-0)/2 = 1
+target is less than nums[middle]
+l = 0, r = 1-1 = 0, m = 0 + (1-0) / 2 = 0
+target is == nums[middle]
+
+2. 
+l = 0, r = 2, m = 1
+target > nums[middle]
+l = 2, m = 2, r = 2
+l becomes greater than r, target not found
+
+3.
+l = 0, r = 2, m = 1
+target is less than nums[middle]
+l = 0, r = 0, m = 0
+r becomes less than l, target is not found
+
+
+4.
+l = 0, r = 2, m = 1
+target > nums[middle]
+l = 2, m = 2, r = 2
+l becomes greater than r, target not found
+
